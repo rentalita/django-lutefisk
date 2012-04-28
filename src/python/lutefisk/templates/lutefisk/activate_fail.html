@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<div class="container">
+  <div class="page-header">
+    <h1>
+      {% trans "Error" %}
+      <small>
+        {% trans "This account could not be activated." %}
+      </small>
+    </h1>
+  </div>
+  <p>
+    {% blocktrans %}
+    Please try again or contact support to determine why this account
+    could not be activated.
+    {% endblocktrans %}
+  </p>
+  <p>
+    <a href="{% url lutefisk_signin %}" title="{% trans "Let's try that again" %}">
+      {% trans "Let's try that again" %}
+    </a>
+  </p>
+</div>
+{% endblock %}

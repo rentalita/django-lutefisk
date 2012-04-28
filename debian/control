@@ -1,0 +1,14 @@
+Source: python-django-lutefisk
+Section: python
+Priority: optional
+Maintainer: Rentalita <hello@rentalita.com>
+Build-Depends: debhelper (>= 8.0), python-setuptools
+Standards-Version: 3.9.2
+
+Package: python-django-lutefisk
+Homepage: http://rentalita.github.com/django-lutefisk
+Architecture: all
+Depends: python-django, python-django-south
+Description: Django Lutefisk is a Django user account management app with an API.
+ Please see a much more detailed description at:
+ http://rentalita.github.com/django-lutefisk

@@ -1,0 +1,11 @@
+{% load i18n %}
+
+<strong>
+  {% trans "Awesome!" %}
+</strong>
+
+{% blocktrans %}
+This account must still be activated. An email has been sent
+to <strong>{{ EMAIL }}</strong>. Please click on the activation link
+in this email to complete the signup process.
+{% endblocktrans %}

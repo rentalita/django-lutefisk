@@ -1,0 +1,51 @@
+{% csrf_token %}
+<fieldset>
+  <legend>
+    {{ form.legend }}
+  </legend>
+  {% if form.non_field_errors %}
+  <div class="alert-message block-message error fade in" data-alert="alert">
+    <a class="close" href="#">&times;</a>
+    {% for error in form.non_field_errors %}
+    <p>
+      {{ error }}
+    </p>
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% for field in form %}
+  {% comment %} Displaying checkboxes differently {% endcomment %}
+  {% if field.name == 'tos' or field.name == 'remember_me' %}
+  <div class="clearfix">
+    <div class="input">
+      <ul class="inputs-list">
+        <li>
+          <label>
+            {{ field }}
+            <span>{{ field.label }}</span>
+          </label>
+        </li>
+      </ul>
+    </div>
+  </div>
+  {% else %}
+  <div class="clearfix {% if field.errors %}error{% endif %}">
+    {{ field.label_tag }}
+    <div class="input {% if field.errors %}error{% endif %}">
+      {{ field }}
+      {% if field.errors %}
+      <span class="help-inline">
+        {% for error in field.errors %}
+        {{ error }}
+        {% endfor %}
+      </span>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+  {% if next %}
+  <input type="hidden" name="next" value="{{ next }}" />
+  {% endif %}
+</fieldset>
+<input type="submit" class="btn primary" value="{{ form.legend }}" />

@@ -1,0 +1,10 @@
+{% load i18n %}{% autoescape off %}
+{% blocktrans with site.name as site %}Email change requested with {{ site }}.{% endblocktrans %}
+
+{% blocktrans %}
+An email has been sent to {{ new_email }}. Please click on the link in
+this email to complete the email change process.
+{% endblocktrans %}
+
+{% trans "All the best!" %}
+{% endautoescape %}

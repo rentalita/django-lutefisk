@@ -1,0 +1,9 @@
+{% load i18n %}{% autoescape off %}
+{% blocktrans with site.name as site %}Email change requested with {{ site }}.{% endblocktrans %}
+
+{% trans "Please click the link below to confirm this new email address:" %}
+
+{{ protocol }}://{{ site.domain }}{% url lutefisk_email_change_confirm confirmation_key %}
+
+{% trans "All the best!" %}
+{% endautoescape %}

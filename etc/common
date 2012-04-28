@@ -1,0 +1,105 @@
+PACKAGE="python-django-lutefisk"
+export PACKAGE
+
+VERSION="0.0.1"
+export VERSION
+
+SQLITE3=$(which sqlite3)
+export SQLITE3
+
+SQLITE3FLAGS=
+export SQLITE3FLAGS
+
+PYTHON="$(which python)"
+export PYTHON
+
+PYTHONFLAGS="-tt"
+
+if [ ! "${LUTEFISK_DEBUG}" = "" ]; then
+    PYTHONFLAGS="${PYTHONFLAGS} -m pdb"
+fi
+
+export PYTHONFLAGS
+
+PYLINT="$(which pylint)"
+export PYLINT
+
+PYLINTFLAGS=
+export PYLINTFLAGS
+
+NOSETESTS="$(which nosetests)"
+export NOSETESTS
+
+NOSETESTSFLAGS="--with-coverage --cover-erase --cover-html"
+export NOSETESTSFLAGS
+
+DJANGO_SETTINGS_MODULE="lutefisk.settings"
+
+if [ ! "${LUTEFISK_TESTS}" = "" ]; then
+    DJANGO_SETTINGS_MODULE="lutefisk.tests.settings"
+fi
+
+export DJANGO_SETTINGS_MODULE
+
+LUTEFISK_HOME=$(cd "${LUTEFISK_HOME}"; pwd)
+export LUTEFISK_HOME
+
+LUTEFISK_BIN="${LUTEFISK_HOME}"/bin
+export LUTEFISK_BIN
+
+LUTEFISK_ETC="${LUTEFISK_HOME}"/etc
+export LUTEFISK_ETC
+
+LUTEFISK_LIB="${LUTEFISK_HOME}"/lib
+export LUTEFISK_LIB
+
+LUTEFISK_SRC="${LUTEFISK_HOME}"/src
+export LUTEFISK_SRC
+
+LUTEFISK_VAR="${LUTEFISK_HOME}"/var
+export LUTEFISK_VAR
+
+LUTEFISK_DATA="${LUTEFISK_VAR}"/data
+export LUTEFISK_DATA
+
+LUTEFISK_DB="${LUTEFISK_VAR}"/db
+export LUTEFISK_DB
+
+LUTEFISK_LOG="${LUTEFISK_VAR}"/log
+export LUTEFISK_LOG
+
+LUTEFISK_RUN="${LUTEFISK_VAR}"/run
+export LUTEFISK_RUN
+
+LUTEFISK_WWW="${LUTEFISK_VAR}"/www
+export LUTEFISK_WWW
+
+PYTHONPATH="${LUTEFISK_LIB}"/python:"${PYTHONPATH}"
+export PYTHONPATH
+
+LUTEFISK_PYTHONFLAGS=
+export LUTEFISK_PYTHONFLAGS
+
+LUTEFISK_PYLINTFLAGS="
+    --rcfile=${LUTEFISK_ETC}/pylintrc
+"
+export LUTEFISK_PYLINTFLAGS
+
+LUTEFISK_NOSETESTSFLAGS="
+    --cover-html-dir=${LUTEFISK_HOME}/coverage
+    --cover-package=lutefisk
+    -w ${LUTEFISK_SRC}/python/lutefisk
+"
+export LUTEFISK_NOSETESTSFLAGS
+
+if [ ! -f "${LUTEFISK_HOME}"/setup.cfg ]; then
+    sed -e "s#\@PREFIX\@#${LUTEFISK_HOME}#g;" \
+        -e "s#\@PACKAGE\@#${PACKAGE}#g;" \
+        "${LUTEFISK_HOME}"/setup.cfg.in > "${LUTEFISK_HOME}"/setup.cfg
+fi
+
+# Local Variables:
+# indent-tabs-mode: nil
+# mode: sh
+# End:
+# vim: ai et sw=4 ts=4

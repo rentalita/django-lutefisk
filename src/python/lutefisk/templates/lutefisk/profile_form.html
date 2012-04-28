@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="span8">
+      <form action="" enctype="multipart/form-data" method="post" class="form-stacked">
+        {% include 'form.html' %}
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

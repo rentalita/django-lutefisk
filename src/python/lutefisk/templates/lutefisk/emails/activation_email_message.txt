@@ -1,0 +1,9 @@
+{% load i18n %}{% autoescape off %}
+{% blocktrans with site.name as site %}Thanks for signing-up with {{ site }}.{% endblocktrans %}
+
+{% trans "Please click the link below to activate your account:" %}
+
+{{ protocol }}://{{ site.domain }}{% url lutefisk_activate user.username activation_key %}
+
+{% trans "All the best!" %}
+{% endautoescape %}

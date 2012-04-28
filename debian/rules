@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+%:
+	dh $@ --with python2
+
+override_dh_auto_clean:
+	./clean.sh --all
+
+override_dh_auto_build:
+	./build.sh build --force
+
+override_dh_auto_install:
+	mv -f setup.cfg setup.cfg.orig
+	mv -f setup.cfg.in setup.cfg.in.orig
+
+	cp setup.deb.in setup.cfg.in
+	./install.sh --force --no-compile -O0 --install-layout=deb
+
+	mv -f setup.cfg.orig setup.cfg
+	mv -f setup.cfg.in.orig setup.cfg.in
