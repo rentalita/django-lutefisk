@@ -105,7 +105,7 @@ class LutefiskManager(UserManager):
             except self.model.DoesNotExist:
                 return False
             if not lutefisk.activation_key_expired():
-                lutefisk.activation_key = settings.USERENA_ACTIVATED
+                lutefisk.activation_key = settings.LUTEFISK_ACTIVATED
                 user = lutefisk.user
                 user.is_active = True
                 lutefisk.save(using=self._db)
