@@ -3,23 +3,28 @@ import datetime
 from south.db import db
 from south.v2 import SchemaMigration
 from django.db import models
+from django.db.utils import DatabaseError
 
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
         
-        # Adding model 'LutefiskSignup'
-        db.create_table('lutefisk_lutefisksignup', (
-            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('user', self.gf('django.db.models.fields.related.OneToOneField')(related_name='lutefisk_signup', unique=True, to=orm['auth.User'])),
-            ('last_active', self.gf('django.db.models.fields.DateTimeField')(null=True, blank=True)),
-            ('activation_key', self.gf('django.db.models.fields.CharField')(max_length=40, blank=True)),
-            ('activation_notification_send', self.gf('django.db.models.fields.BooleanField')(default=False)),
-            ('email_unconfirmed', self.gf('django.db.models.fields.EmailField')(max_length=75, blank=True)),
-            ('email_confirmation_key', self.gf('django.db.models.fields.CharField')(max_length=40, blank=True)),
-            ('email_confirmation_key_created', self.gf('django.db.models.fields.DateTimeField')(null=True, blank=True)),
-        ))
-        db.send_create_signal('lutefisk', ['LutefiskSignup'])
+        try:
+            db.rename_table('userena_userenasignup', 'lutefisk_lutefisksignup')
+        except DatabaseError:
+
+            # Adding model 'LutefiskSignup'
+            db.create_table('lutefisk_lutefisksignup', (
+                ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+                ('user', self.gf('django.db.models.fields.related.OneToOneField')(related_name='lutefisk_signup', unique=True, to=orm['auth.User'])),
+                ('last_active', self.gf('django.db.models.fields.DateTimeField')(null=True, blank=True)),
+                ('activation_key', self.gf('django.db.models.fields.CharField')(max_length=40, blank=True)),
+                ('activation_notification_send', self.gf('django.db.models.fields.BooleanField')(default=False)),
+                ('email_unconfirmed', self.gf('django.db.models.fields.EmailField')(max_length=75, blank=True)),
+                ('email_confirmation_key', self.gf('django.db.models.fields.CharField')(max_length=40, blank=True)),
+                ('email_confirmation_key_created', self.gf('django.db.models.fields.DateTimeField')(null=True, blank=True)),
+            ))
+            db.send_create_signal('lutefisk', ['LutefiskSignup'])
 
 
     def backwards(self, orm):

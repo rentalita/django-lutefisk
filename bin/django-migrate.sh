@@ -6,7 +6,7 @@ export LUTEFISK_HOME
 . "${LUTEFISK_HOME}"/etc/common
 
 "${LUTEFISK_BIN}"/django-manage.sh syncdb --noinput
-"${LUTEFISK_BIN}"/django-manage.sh migrate lutefisk 0001
+"${LUTEFISK_BIN}"/django-manage.sh migrate
 
 # Local Variables:
 # indent-tabs-mode: nil
