@@ -378,7 +378,7 @@ def profile_edit(request, template_name='lutefisk/profile_form.html',
         data = None
 
     if form is None:
-        _form = EditProfileForm
+        _form = forms.EditProfileForm
     else:
         _form = form
 
