@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-11 15:44-0500\n"
+"POT-Creation-Date: 2012-06-19 09:00-0500\n"
 "PO-Revision-Date: 2011-09-03 19:35-0600\n"
 "Last-Translator: Vincent Guérault, vincent@communes.com \n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,7 @@ msgstr "un mes"
 
 #: forms.py:23
 msgid "Sign Up"
-msgstr ""
+msgstr "Regístrate"
 
 #: forms.py:26 forms.py:86 templates/lutefisk/profile_detail.html:13
 msgid "Email"
@@ -40,11 +40,11 @@ msgstr "Confirma la contraseña"
 
 #: forms.py:38 forms.py:141
 msgid "This email address is already in use by someone else."
-msgstr ""
+msgstr "Este email ya está en uso por otra persona."
 
 #: forms.py:50
 msgid "The two passwords do not match."
-msgstr ""
+msgstr "Las dos contraseñas no son iguales."
 
 #: forms.py:74
 msgid "I have read and agree to the Terms of Service"
@@ -56,7 +56,7 @@ msgstr "Debes leer y aceptar los términos y condiciones para inscribirte."
 
 #: forms.py:83
 msgid "Sign In"
-msgstr ""
+msgstr "Ingresa"
 
 #: forms.py:95
 #, python-format
@@ -65,11 +65,11 @@ msgstr "Recuérdame por %(days)s"
 
 #: forms.py:111
 msgid "The password associated with this email address is incorrect."
-msgstr ""
+msgstr "La contraseña asociada a este email es incorrecta."
 
 #: forms.py:116
 msgid "Change Email"
-msgstr ""
+msgstr "Cambiar Email"
 
 #: forms.py:119
 msgid "New email"
@@ -77,19 +77,19 @@ msgstr "Nuevo correo"
 
 #: forms.py:139
 msgid "This is your current email address."
-msgstr ""
+msgstr "Esta es tu actual dirección de email."
 
 #: forms.py:155
 msgid "Set Password"
-msgstr ""
+msgstr "Configura la Contraseña"
 
 #: forms.py:159 forms.py:168
 msgid "New password"
-msgstr ""
+msgstr "Nueva contraseña"
 
 #: forms.py:160 forms.py:169
 msgid "Repeat new password"
-msgstr ""
+msgstr "Repite la nueva contraseña"
 
 #: forms.py:164
 msgid "Change Password"
@@ -97,7 +97,7 @@ msgstr "Cambiar contraseña"
 
 #: forms.py:170
 msgid "Current password"
-msgstr ""
+msgstr "Contraseña actual"
 
 #: forms.py:174
 msgid "Reset Password"
@@ -105,7 +105,7 @@ msgstr "Reinicializar tu contraseña"
 
 #: forms.py:182
 msgid "Edit Profile"
-msgstr ""
+msgstr "Editar Perfil"
 
 #: models.py:24
 msgid "user"
@@ -192,19 +192,19 @@ msgstr "idioma"
 
 #: settings.py:27
 msgid "English"
-msgstr ""
+msgstr "Inglés"
 
 #: settings.py:28
 msgid "Espanol"
-msgstr ""
+msgstr "Español"
 
 #: templates/lutefisk/activate_fail.html:8
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 #: templates/lutefisk/activate_fail.html:10
 msgid "This account could not be activated."
-msgstr ""
+msgstr "Esta cuenta no puede ser activada."
 
 #: templates/lutefisk/activate_fail.html:15
 msgid ""
@@ -213,11 +213,15 @@ msgid ""
 "    could not be activated.\n"
 "    "
 msgstr ""
+"\n"
+"    Por favor trata de nuevo o contacta a soporte para determinar por qué\n"
+"    esta cuenta no puede ser activada.\n"
+"    "
 
 #: templates/lutefisk/activate_fail.html:21
 #: templates/lutefisk/activate_fail.html:22
 msgid "Let's try that again"
-msgstr ""
+msgstr "Tratemos de nuevo"
 
 #: templates/lutefisk/email_change_confirm_message.html:3
 #, python-format
@@ -225,6 +229,8 @@ msgid ""
 "\n"
 "Your email has been changed to <strong>%(EMAIL)s</strong>.\n"
 msgstr ""
+"\n"
+"Tu Email ha sido cambiado a <strong>%(EMAIL)s</strong>.\n"
 
 #: templates/lutefisk/email_change_message.html:3
 #, python-format
@@ -233,23 +239,29 @@ msgid ""
 "An email has been sent to <strong>%(EMAIL)s</strong>. Please click\n"
 "on the link in this email to switch to this new email address.\n"
 msgstr ""
+"\n"
+"Un email ha sido enviado a <strong>%(EMAIL)s</strong>. Por favor has clic\n"
+"en el enlace enviado para activar esta nueva cuenta de email.\n"
 
 #: templates/lutefisk/password_change_message.html:3
 msgid ""
 "Your password has been changed. Please use this new password to sign-in from "
 "now on."
 msgstr ""
+"Tu contraseña ha sido cambiada. Por favor usa esta nueva contraseña para "
+"ingresarde ahora en adelante."
 
 #: templates/lutefisk/password_reset_confirm_message.html:3
 msgid "Your password has been reset. Please sign-in with this new password."
 msgstr ""
+"Tu contraseña ha sido reseteada. Por favor ingresa con esta nueva contraseña."
 
 #: templates/lutefisk/password_reset_form.html:16
 #: templates/lutefisk/password_reset_form.html:17
 #: templates/lutefisk/signin_form.html:16
 #: templates/lutefisk/signin_form.html:17
 msgid "Don't have an account?"
-msgstr ""
+msgstr "¿No tienes una cuenta?"
 
 #: templates/lutefisk/password_reset_message.html:3
 #, python-format
@@ -258,6 +270,9 @@ msgid ""
 "An email has been sent to <strong>%(EMAIL)s</strong>. Please click\n"
 "on the link in this email to complete the password reset process.\n"
 msgstr ""
+"\n"
+"Un email ha sido enviado a <strong>%(EMAIL)s</strong>. Por favor has clic\n"
+"en el enlace para completar el cambio de contraseña.\n"
 
 #: templates/lutefisk/profile_detail.html:4
 #, python-format
@@ -296,6 +311,10 @@ msgid ""
 "to <strong>%(EMAIL)s</strong>. Please click on the activation link\n"
 "in this email to activate this account.\n"
 msgstr ""
+"\n"
+"Esta cuenta no ha sido activada. Un email ha sido enviado\n"
+"a <strong>%(EMAIL)s</strong>. Por favor has clic en el enlace de\n"
+"activación para activar tu cuenta.\n"
 
 #: templates/lutefisk/signin_form.html:23
 #: templates/lutefisk/signin_form.html:24
@@ -304,12 +323,12 @@ msgstr "¿Olvidaste tu contraseña?"
 
 #: templates/lutefisk/signout_message.html:3
 msgid "You have been signed out. 'Til we meet again."
-msgstr ""
+msgstr "Se ha cerrado tu cuenta. Nos vemos."
 
 #: templates/lutefisk/signup_form.html:16
 #: templates/lutefisk/signup_form.html:17
 msgid "Already have an account?"
-msgstr ""
+msgstr "¿Ya tienes una cuenta?"
 
 #: templates/lutefisk/signup_message.html:3
 #, python-format
@@ -319,37 +338,43 @@ msgid ""
 "to <strong>%(EMAIL)s</strong>. Please click on the activation link\n"
 "in this email to complete the signup process.\n"
 msgstr ""
+"\n"
+"Esta cuenta debe ser activada. Un mail ha sido enviado\n"
+"a <strong>%(EMAIL)s</strong>. Por favor has clic en el enlace\n"
+"de activación en el mail para completar el registro.\n"
 
 #: templates/lutefisk/emails/activation_email_message.txt:2
 #, python-format
 msgid "Thanks for signing-up with %(site)s."
-msgstr ""
+msgstr "Gracias por registrarte con %(site)s."
 
 #: templates/lutefisk/emails/activation_email_message.txt:4
 msgid "Please click the link below to activate your account:"
-msgstr ""
+msgstr "Por favor has clic en el enlace siguiente para activar tu cuenta:"
 
 #: templates/lutefisk/emails/activation_email_message.txt:8
 #: templates/lutefisk/emails/confirmation_email_message_new.txt:8
 #: templates/lutefisk/emails/confirmation_email_message_old.txt:9
 #: templates/lutefisk/emails/password_reset_message.txt:10
 msgid "All the best!"
-msgstr ""
+msgstr "¡Gracias!"
 
 #: templates/lutefisk/emails/activation_email_subject.txt:2
 #, python-format
 msgid "Activate your account with %(site)s."
-msgstr ""
+msgstr "Activa tu cuenta con %(site)s."
 
 #: templates/lutefisk/emails/confirmation_email_message_new.txt:2
 #: templates/lutefisk/emails/confirmation_email_message_old.txt:2
 #, python-format
 msgid "Email change requested with %(site)s."
-msgstr ""
+msgstr "Se ha requerido un cambio de email en %(site)s."
 
 #: templates/lutefisk/emails/confirmation_email_message_new.txt:4
 msgid "Please click the link below to confirm this new email address:"
 msgstr ""
+"Por favor has clic en el enlace siguiente para confirmar la nueva dirección "
+"de Mail:"
 
 #: templates/lutefisk/emails/confirmation_email_message_old.txt:4
 #, python-format
@@ -358,12 +383,15 @@ msgid ""
 "An email has been sent to %(new_email)s. Please click on the link in\n"
 "this email to complete the email change process.\n"
 msgstr ""
+"\n"
+"Un email ha sido enviado a %(new_email)s. Por favor has clic en el enlace\n"
+"en este email para completar el proceso de cambio de dirección.\n"
 
 #: templates/lutefisk/emails/confirmation_email_subject_new.txt:2
 #: templates/lutefisk/emails/confirmation_email_subject_old.txt:2
 #, python-format
 msgid "Confirm your email with %(site)s."
-msgstr ""
+msgstr "Confirma tu email en %(site)s."
 
 #: templates/lutefisk/emails/password_reset_message.txt:2
 #, python-format
@@ -372,7 +400,11 @@ msgid ""
 "to reset the account password with %(site_name)s. You can safely\n"
 "ignore this message if that someone wasn't you."
 msgstr ""
+"Has recibido este e-mail porque alguien ha pedido\n"
+"cambiar la contraseña de esta cuenta en %(site_name)s. Puedes ignorar\n"
+"este mensaje con seguridad si no fuiste tu quién pidió esto."
 
 #: templates/lutefisk/emails/password_reset_message.txt:6
 msgid "Please click the link below to choose a new password:"
 msgstr ""
+"Por favor has clic en el siguiente enlace para elegir una nueva contraseña:"
